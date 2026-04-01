@@ -1,0 +1,85 @@
+---
+const socials = [
+  {
+    label: 'GitHub',
+    url: 'https://github.com/sagarjethi',
+    icon: '<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />',
+  },
+  {
+    label: 'X / Twitter',
+    url: 'https://x.com/sagarbjethi',
+    icon: '<path d="M4 4l11.733 16H20L8.267 4z" /><path d="M4 20l6.768-6.768M15.232 10.232L20 4" />',
+  },
+  {
+    label: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/sagarjethi',
+    icon: '<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect width="4" height="12" x="2" y="9" /><circle cx="4" cy="4" r="2" />',
+  },
+];
+---
+
+<section id="contact" class="py-20 px-6">
+  <div class="max-w-xl mx-auto">
+    <h2 class="font-sora text-2xl font-bold mb-2 text-center">Get in Touch</h2>
+    <div class="w-12 h-0.5 bg-accent mb-4 mx-auto"></div>
+    <p class="text-muted text-center mb-10">Have a project in mind or want to collaborate? Drop me a message.</p>
+
+    <form action="https://formspree.io/f/xcontact" method="POST" class="space-y-5 mb-12">
+      <div>
+        <label for="name" class="font-fira text-xs text-muted block mb-2">Name</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          required
+          class="w-full bg-card border border-border px-4 py-3 text-text text-sm focus:border-accent focus:outline-none transition-colors"
+          placeholder="Your name"
+        />
+      </div>
+      <div>
+        <label for="email" class="font-fira text-xs text-muted block mb-2">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          required
+          class="w-full bg-card border border-border px-4 py-3 text-text text-sm focus:border-accent focus:outline-none transition-colors"
+          placeholder="you@example.com"
+        />
+      </div>
+      <div>
+        <label for="message" class="font-fira text-xs text-muted block mb-2">Message</label>
+        <textarea
+          name="message"
+          id="message"
+          rows="5"
+          required
+          class="w-full bg-card border border-border px-4 py-3 text-text text-sm focus:border-accent focus:outline-none transition-colors resize-none"
+          placeholder="Tell me about your project..."
+        ></textarea>
+      </div>
+      <button
+        type="submit"
+        class="font-fira text-sm border border-accent text-accent px-6 py-3 hover:bg-accent hover:text-primary transition-all duration-200 w-full"
+      >
+        Send Message
+      </button>
+    </form>
+
+    <div class="flex justify-center gap-6">
+      {socials.map(social => (
+        <a
+          href={social.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-muted hover:text-accent transition-colors duration-200"
+          aria-label={social.label}
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <Fragment set:html={social.icon} />
+          </svg>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

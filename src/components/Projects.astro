@@ -1,0 +1,79 @@
+---
+const projects = [
+  {
+    name: 'Web3Agent',
+    description: 'AI-driven platform that lets users execute complex blockchain operations through natural language commands.',
+    tags: ['LangChain', 'CrewAI', 'Solidity', 'React.js', 'Web3'],
+    url: 'https://www.web3agent.io',
+  },
+  {
+    name: 'Private AI',
+    description: 'Privacy-first AI agents with encrypted backend systems and real-time sentiment analysis.',
+    tags: ['LangChain', 'AutoGen', 'FastAPI', 'CrewAI'],
+    url: 'https://thething.privateai.com',
+  },
+  {
+    name: 'Currently.social',
+    description: 'AI-powered social platform with LLM-driven personalization, content recommendations, and moderation.',
+    tags: ['Python', 'FastAPI', 'OpenAI', 'CrewAI', 'AWS'],
+    url: 'https://currently.social',
+  },
+  {
+    name: 'TrustSwap',
+    description: 'DeFi staking smart contracts enabling secure and efficient token staking for thousands of users.',
+    tags: ['Solidity', 'DeFi', 'Web3', 'React.js'],
+    url: 'https://trustswap.com',
+  },
+  {
+    name: 'Akoya Legends',
+    description: 'NFT gaming platform with blockchain architecture for secure in-game asset transactions.',
+    tags: ['Solidity', 'NFTs', 'Node.js', 'Web3'],
+    url: 'https://akoyalegends.io',
+  },
+  {
+    name: 'Wallet-as-a-Service',
+    description: 'Secure, scalable digital asset management platform with multi-chain support and multi-sig wallets.',
+    tags: ['Smart Contracts', 'Multi-Chain', 'Node.js', 'REST APIs'],
+  },
+];
+---
+
+<section id="projects" class="py-20 px-6">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="font-sora text-2xl font-bold mb-2">Featured Projects</h2>
+    <div class="w-12 h-0.5 bg-accent mb-10"></div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      {projects.map(project => (
+        <div class="group border border-border p-6 hover:border-accent/40 transition-colors duration-300">
+          <div class="flex items-start justify-between mb-3">
+            <h3 class="font-sora font-semibold text-lg text-text group-hover:text-accent transition-colors">
+              {project.name}
+            </h3>
+            {project.url && (
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-muted hover:text-accent transition-colors shrink-0 ml-3"
+                aria-label={`Visit ${project.name}`}
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            )}
+          </div>
+          <p class="text-muted text-sm leading-relaxed mb-4">{project.description}</p>
+          <div class="flex flex-wrap gap-2">
+            {project.tags.map(tag => (
+              <span class="font-fira text-xs text-accent border border-accent/30 px-2 py-0.5">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

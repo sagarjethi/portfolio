@@ -1,0 +1,50 @@
+---
+const skillGroups = [
+  {
+    label: 'Blockchain',
+    skills: ['Solidity', 'Smart Contracts', 'DeFi', 'NFTs', 'Tokenomics', 'DAO', 'Multi-Chain', 'Web3'],
+  },
+  {
+    label: 'AI & Agents',
+    skills: ['LangChain', 'CrewAI', 'AutoGen', 'LLM APIs', 'Prompt Engineering'],
+  },
+  {
+    label: 'Backend',
+    skills: ['Python', 'FastAPI', 'Flask', 'Node.js', 'GoLang', 'PostgreSQL', 'MySQL', 'MongoDB'],
+  },
+  {
+    label: 'Cloud & DevOps',
+    skills: ['AWS', 'Azure', 'GCP', 'Docker', 'CI/CD', 'Nginx', 'Kubernetes'],
+  },
+  {
+    label: 'Frontend',
+    skills: ['React.js', 'Vue.js', 'Angular', 'React Native'],
+  },
+  {
+    label: 'Leadership',
+    skills: ['Team Lead', 'Product Development', 'Architecture', 'Agile/Scrum'],
+  },
+];
+---
+
+<section id="skills" class="py-20 px-6">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="font-sora text-2xl font-bold mb-2">Skills</h2>
+    <div class="w-12 h-0.5 bg-accent mb-10"></div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {skillGroups.map(group => (
+        <div>
+          <h3 class="font-fira text-sm text-accent mb-3 tracking-wide">{group.label}</h3>
+          <div class="flex flex-wrap gap-2">
+            {group.skills.map(skill => (
+              <span class="text-sm text-muted border border-border px-3 py-1 hover:border-muted transition-colors">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

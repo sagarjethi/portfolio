@@ -1,0 +1,33 @@
+---
+const education = [
+  {
+    degree: 'Masters of Computer Application',
+    institution: 'B H Gardi College of Engineering and Technology',
+    period: '2012 — 2015',
+  },
+  {
+    degree: 'Bachelor of Computer Application',
+    institution: 'Sanskar Institute of Management & Information Technology',
+    period: '2010 — 2012',
+  },
+];
+---
+
+<section id="education" class="py-20 px-6">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="font-sora text-2xl font-bold mb-2">Education</h2>
+    <div class="w-12 h-0.5 bg-accent mb-8"></div>
+
+    <div class="space-y-6">
+      {education.map(edu => (
+        <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4">
+          <span class="font-fira text-xs text-muted shrink-0 w-28">{edu.period}</span>
+          <div>
+            <p class="font-sora font-semibold text-text">{edu.degree}</p>
+            <p class="text-muted text-sm">{edu.institution}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
