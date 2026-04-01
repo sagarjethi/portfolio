@@ -1,0 +1,23 @@
+---
+const stats = [
+  { number: '10+', label: 'Years Experience' },
+  { number: '30+', label: 'AI Agents Built' },
+  { number: '$5M+', label: 'Raised by Projects' },
+  { number: '8+', label: 'Years in Blockchain' },
+];
+---
+
+<section class="py-16 px-6 border-y border-border">
+  <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+    {stats.map(stat => (
+      <div class="text-center">
+        <div class="font-sora text-3xl md:text-4xl font-bold text-accent mb-1">
+          {stat.number}
+        </div>
+        <div class="font-fira text-xs text-muted tracking-wide uppercase">
+          {stat.label}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

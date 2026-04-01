@@ -1,11 +1,18 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import Stats from '../components/Stats.astro';
+import About from '../components/About.astro';
+import Experience from '../components/Experience.astro';
 ---
 
 <BaseLayout title="Sagar Jethi — AI Developer & Blockchain Architect">
   <Nav />
-  <main class="pt-20">
-    <p class="text-center text-muted py-40">Building...</p>
+  <main>
+    <Hero />
+    <Stats />
+    <About />
+    <Experience />
   </main>
 </BaseLayout>

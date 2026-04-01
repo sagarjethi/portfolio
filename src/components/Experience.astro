@@ -1,0 +1,103 @@
+---
+const experiences = [
+  {
+    company: 'Gintonic AI',
+    url: 'https://www.gintonic.ai/',
+    role: 'Full Stack Product Developer',
+    period: 'Dec 2024 — Present',
+    points: [
+      'Engineered LLM-powered AI agents with LangChain, CrewAI, and AutoGen for real-time function calling and API integrations.',
+      'Deployed smart contracts (ERC-20, ERC-721, ERC-1155) for AI-driven decentralized applications.',
+    ],
+  },
+  {
+    company: 'Private AI',
+    url: 'https://www.privateai.com/',
+    role: 'Product Research & AI Backend Developer',
+    period: '2024',
+    points: [
+      'Architected encrypted backend systems and deployed privacy-first AI agents using LLM frameworks.',
+      'Built AI-powered sentiment analysis for Twitter with real-time insights.',
+    ],
+  },
+  {
+    company: 'Velvet Capital',
+    url: 'https://www.velvet.capital/',
+    role: 'Core Team — Blockchain Architect',
+    period: '2022',
+    points: [
+      'Researched and analyzed DeFi products across tokenomics, liquidity protocols, and yield optimization.',
+      'Architected multi-chain integrations improving platform interoperability and token utility.',
+    ],
+  },
+  {
+    company: 'Independent Consultant',
+    role: 'Blockchain Development',
+    period: '2019 — 2021',
+    points: [
+      'Designed and deployed smart contracts for DeFi platforms, tokenized assets, and NFT marketplaces.',
+      'Advised enterprises and startups on blockchain architecture, tokenomics, and governance.',
+    ],
+  },
+  {
+    company: 'Nonceblox',
+    role: 'Blockchain Architect & Cryptography Researcher',
+    period: '2021',
+    points: [
+      'Researched Decentralized Identifiers (DIDs) and decentralized identity frameworks.',
+      'Designed and deployed ERC-20 tokens and ICOs with secure contract implementations.',
+    ],
+  },
+  {
+    company: 'DomusCoins',
+    role: 'Blockchain Developer',
+    period: '2018 — 2019',
+    points: [
+      'Deployed smart contracts on Ethereum for secure, efficient token operations.',
+      'Built decentralized applications integrating frontend interfaces with blockchain backends.',
+    ],
+  },
+];
+---
+
+<section id="experience" class="py-20 px-6">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="font-sora text-2xl font-bold mb-2">Experience</h2>
+    <div class="w-12 h-0.5 bg-accent mb-10"></div>
+
+    <div class="relative">
+      <!-- Timeline line -->
+      <div class="absolute left-0 top-2 bottom-2 w-px bg-border md:left-[7px]"></div>
+
+      <div class="space-y-10 pl-8">
+        {experiences.map(exp => (
+          <div class="relative">
+            <!-- Timeline dot -->
+            <div class="absolute -left-8 top-1.5 w-[15px] h-[15px] rounded-full border-2 border-accent bg-primary md:-left-[25px]"></div>
+
+            <div>
+              <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
+                {exp.url ? (
+                  <a href={exp.url} target="_blank" rel="noopener noreferrer" class="font-sora font-semibold text-text hover:text-accent transition-colors">
+                    {exp.company}
+                  </a>
+                ) : (
+                  <span class="font-sora font-semibold text-text">{exp.company}</span>
+                )}
+                <span class="font-fira text-xs text-muted">{exp.period}</span>
+              </div>
+              <p class="font-fira text-sm text-accent mb-3">{exp.role}</p>
+              <ul class="space-y-2">
+                {exp.points.map(point => (
+                  <li class="text-muted text-sm leading-relaxed pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-border">
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
