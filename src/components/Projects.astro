@@ -5,12 +5,13 @@ const projects = [
     description: 'AI-driven platform that lets users execute complex blockchain operations through natural language commands.',
     tags: ['LangChain', 'CrewAI', 'Solidity', 'React.js', 'Web3'],
     url: 'https://www.web3agent.io',
+    highlight: '$10K+ hackathon wins',
   },
   {
     name: 'Private AI',
     description: 'Privacy-first AI agents with encrypted backend systems and real-time sentiment analysis.',
     tags: ['LangChain', 'AutoGen', 'FastAPI', 'CrewAI'],
-    url: 'https://thething.privateai.com',
+    url: 'https://www.privateai.com',
   },
   {
     name: 'Currently.social',
@@ -25,10 +26,23 @@ const projects = [
     url: 'https://trustswap.com',
   },
   {
-    name: 'Akoya Legends',
-    description: 'NFT gaming platform with blockchain architecture for secure in-game asset transactions.',
-    tags: ['Solidity', 'NFTs', 'Node.js', 'Web3'],
-    url: 'https://akoyalegends.io',
+    name: 'Velvet Capital',
+    description: 'DeFi asset management protocol with $200K+ TVL and $3.4M+ funding. Multi-chain portfolio rebalancing and yield optimization.',
+    tags: ['Solidity', 'DeFi', 'Tokenomics', 'Multi-Chain'],
+    url: 'https://www.velvet.capital',
+    highlight: '$200K+ TVL · $3.4M+ funded',
+  },
+  {
+    name: 'Cointopper',
+    description: 'Full-stack cryptocurrency management and trading platform with real-time dashboards and multi-account operations.',
+    tags: ['PHP', 'Laravel', 'Angular.js', 'MySQL'],
+    url: 'https://cointopper.com',
+  },
+  {
+    name: 'The Thing - Private AI',
+    description: 'Privacy-first AI platform with encrypted backend systems, decentralized storage, and real-time sentiment analysis.',
+    tags: ['LangChain', 'AutoGen', 'CrewAI', 'FastAPI'],
+    url: 'https://thething.privateai.com',
   },
   {
     name: 'Wallet-as-a-Service',
@@ -38,24 +52,34 @@ const projects = [
 ];
 ---
 
-<section id="projects" class="py-20 px-6">
-  <div class="max-w-4xl mx-auto">
-    <h2 class="font-sora text-2xl font-bold mb-2">Featured Projects</h2>
-    <div class="w-12 h-0.5 bg-accent mb-10"></div>
+<section id="projects" class="py-24 px-6 section-alt">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-16">
+      <span class="font-fira text-xs text-accent tracking-widest uppercase block mb-3">Portfolio</span>
+      <h2 class="font-sora text-3xl md:text-4xl font-bold inline-block section-title">Featured Projects</h2>
+      <p class="text-muted mt-6 max-w-xl mx-auto">A selection of projects spanning AI agents, DeFi protocols, and full-stack platforms.</p>
+    </div>
 
     <div class="grid md:grid-cols-2 gap-6">
       {projects.map(project => (
-        <div class="group border border-border p-6 hover:border-accent/40 transition-colors duration-300">
+        <div class="glow-card rounded-lg p-6 group">
           <div class="flex items-start justify-between mb-3">
-            <h3 class="font-sora font-semibold text-lg text-text group-hover:text-accent transition-colors">
-              {project.name}
-            </h3>
+            <div>
+              {project.highlight && (
+                <span class="font-fira text-[10px] bg-accent/10 text-accent px-2.5 py-1 rounded-full border border-accent/20 inline-block mb-2">
+                  {project.highlight}
+                </span>
+              )}
+              <h3 class="font-sora font-semibold text-lg text-text group-hover:text-accent transition-colors">
+                {project.name}
+              </h3>
+            </div>
             {project.url && (
               <a
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-muted hover:text-accent transition-colors shrink-0 ml-3"
+                class="text-muted hover:text-accent transition-colors shrink-0 ml-3 mt-1 p-2 rounded-lg hover:bg-accent/10"
                 aria-label={`Visit ${project.name}`}
               >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -67,7 +91,7 @@ const projects = [
           <p class="text-muted text-sm leading-relaxed mb-4">{project.description}</p>
           <div class="flex flex-wrap gap-2">
             {project.tags.map(tag => (
-              <span class="font-fira text-xs text-accent border border-accent/30 px-2 py-0.5">
+              <span class="font-fira text-xs px-2.5 py-1 rounded-full tag-glow text-muted">
                 {tag}
               </span>
             ))}

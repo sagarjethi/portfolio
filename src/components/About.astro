@@ -2,26 +2,56 @@
 
 ---
 
-<section id="about" class="py-20 px-6">
-  <div class="max-w-3xl mx-auto">
-    <h2 class="font-sora text-2xl font-bold mb-2">About</h2>
-    <div class="w-12 h-0.5 bg-accent mb-8"></div>
+<section id="about" class="py-24 px-6 section-alt">
+  <div class="max-w-4xl mx-auto">
+    <div class="grid md:grid-cols-[1fr_2fr] gap-12 items-start">
+      <!-- Left: Title + decorative -->
+      <div>
+        <span class="font-fira text-xs text-accent tracking-widest uppercase block mb-3">Who I Am</span>
+        <h2 class="font-sora text-3xl md:text-4xl font-bold section-title">About Me</h2>
+        <div class="mt-12 hidden md:block">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="p-4 rounded-lg bg-card border border-border">
+              <div class="font-sora text-2xl font-bold text-accent">8+</div>
+              <div class="font-fira text-xs text-muted mt-1">Blockchain Years</div>
+            </div>
+            <div class="p-4 rounded-lg bg-card border border-border">
+              <div class="font-sora text-2xl font-bold text-accent">2.5</div>
+              <div class="font-fira text-xs text-muted mt-1">Years AI Agents</div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <div class="space-y-5 text-muted leading-relaxed">
-      <p>
-        I've spent the last decade at the intersection of two fields that are reshaping how we build software:
-        artificial intelligence and blockchain. What started as curiosity about smart contracts in 2016
-        evolved into a career building production systems — from DeFi protocols managing hundreds of thousands
-        in TVL to AI agents that automate complex multi-step workflows.
-      </p>
-      <p>
-        Today I work across the full stack: designing LLM-powered agents with LangChain and CrewAI,
-        deploying Solidity contracts for tokenization and DeFi, and shipping web platforms with React and FastAPI.
-        I've been part of core teams at <span class="text-text">Velvet Capital</span>,
-        built privacy-first AI systems at <span class="text-text">Private AI</span>,
-        and currently develop AI-driven decentralized applications at <span class="text-text">Gintonic AI</span>.
-        I care about building things that work — not just things that demo well.
-      </p>
+      <!-- Right: Content -->
+      <div>
+        <div class="space-y-5 text-muted leading-relaxed text-base md:text-lg">
+          <p>
+            I've spent the last decade at the intersection of two fields that are reshaping how we build software:
+            <span class="text-text font-medium">artificial intelligence</span> and <span class="text-text font-medium">blockchain</span>.
+            What started with building full-stack platforms in 2015
+            evolved into smart contracts, DeFi protocols managing hundreds of thousands in TVL,
+            and AI agents that automate complex multi-step workflows.
+          </p>
+          <p>
+            Today I work across the full stack: designing LLM-powered agents with <span class="text-accent">LangChain</span> and <span class="text-accent">CrewAI</span>,
+            deploying Solidity contracts for tokenization and DeFi, and shipping web platforms with React and FastAPI.
+            I've been part of core teams at <span class="text-text font-medium">Velvet Capital</span>,
+            built privacy-first AI systems at <span class="text-text font-medium">Private AI</span>,
+            and currently develop AI-driven decentralized applications at <span class="text-text font-medium">Gintonic AI</span>.
+          </p>
+          <p class="font-medium text-text">
+            I care about building things that work — not just things that demo well.
+          </p>
+        </div>
+
+        <!-- Inline skills preview -->
+        <div class="mt-8 flex flex-wrap gap-2">
+          {['Solidity', 'LangChain', 'CrewAI', 'FastAPI', 'React.js', 'Web3'].map(skill => (
+            <span class="font-fira text-xs px-3 py-1.5 rounded-full tag-glow text-muted">{skill}</span>
+          ))}
+        </div>
+      </div>
     </div>
   </div>
 </section>

@@ -2,43 +2,54 @@
 const skillGroups = [
   {
     label: 'Blockchain',
+    icon: '◆',
     skills: ['Solidity', 'Smart Contracts', 'DeFi', 'NFTs', 'Tokenomics', 'DAO', 'Multi-Chain', 'Web3'],
   },
   {
     label: 'AI & Agents',
+    icon: '◈',
     skills: ['LangChain', 'CrewAI', 'AutoGen', 'LLM APIs', 'Prompt Engineering'],
   },
   {
     label: 'Backend',
+    icon: '⟐',
     skills: ['Python', 'FastAPI', 'Flask', 'Node.js', 'GoLang', 'PostgreSQL', 'MySQL', 'MongoDB'],
   },
   {
     label: 'Cloud & DevOps',
+    icon: '△',
     skills: ['AWS', 'Azure', 'GCP', 'Docker', 'CI/CD', 'Nginx', 'Kubernetes'],
   },
   {
     label: 'Frontend',
+    icon: '◇',
     skills: ['React.js', 'Vue.js', 'Angular', 'React Native'],
   },
   {
     label: 'Leadership',
+    icon: '◉',
     skills: ['Team Lead', 'Product Development', 'Architecture', 'Agile/Scrum'],
   },
 ];
 ---
 
-<section id="skills" class="py-20 px-6">
-  <div class="max-w-4xl mx-auto">
-    <h2 class="font-sora text-2xl font-bold mb-2">Skills</h2>
-    <div class="w-12 h-0.5 bg-accent mb-10"></div>
+<section id="skills" class="py-24 px-6">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-16">
+      <span class="font-fira text-xs text-accent tracking-widest uppercase block mb-3">Expertise</span>
+      <h2 class="font-sora text-3xl md:text-4xl font-bold inline-block section-title">Skills & Tools</h2>
+    </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       {skillGroups.map(group => (
-        <div>
-          <h3 class="font-fira text-sm text-accent mb-3 tracking-wide">{group.label}</h3>
+        <div class="glow-card rounded-lg p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-accent text-lg">{group.icon}</span>
+            <h3 class="font-fira text-sm text-accent font-medium tracking-wide">{group.label}</h3>
+          </div>
           <div class="flex flex-wrap gap-2">
             {group.skills.map(skill => (
-              <span class="text-sm text-muted border border-border px-3 py-1 hover:border-muted transition-colors">
+              <span class="font-fira text-xs px-3 py-1.5 rounded-full tag-glow text-muted">
                 {skill}
               </span>
             ))}

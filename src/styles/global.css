@@ -41,3 +41,92 @@
   outline: 2px solid #58a6ff;
   outline-offset: 2px;
 }
+
+/* Glow effects */
+.glow-card {
+  position: relative;
+  background: #161b22;
+  border: 1px solid #21262d;
+  transition: all 0.4s ease;
+}
+.glow-card:hover {
+  border-color: rgba(88, 166, 255, 0.3);
+  box-shadow: 0 0 30px rgba(88, 166, 255, 0.08), 0 8px 32px rgba(0,0,0,0.3);
+  transform: translateY(-2px);
+}
+
+/* Section alternating backgrounds */
+.section-alt {
+  background: linear-gradient(180deg, #0d1117 0%, #111820 50%, #0d1117 100%);
+}
+
+/* Decorative gradient line */
+.gradient-line {
+  height: 3px;
+  background: linear-gradient(90deg, #58a6ff 0%, #1f6feb 50%, transparent 100%);
+  border: none;
+}
+
+/* Accent background section */
+.section-accent-bg {
+  background: linear-gradient(135deg, #0d1117 0%, #0d1f3c 50%, #0d1117 100%);
+  border-top: 1px solid #21262d;
+  border-bottom: 1px solid #21262d;
+}
+
+/* Floating decorative dots */
+.dot-pattern {
+  background-image: radial-gradient(circle, #21262d 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Animated underline for section titles */
+.section-title {
+  display: inline-block;
+  position: relative;
+}
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, #58a6ff, #1f6feb);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+.section-title:hover::after {
+  width: 100%;
+}
+
+/* Tag pill with glow */
+.tag-glow {
+  border: 1px solid rgba(88, 166, 255, 0.25);
+  transition: all 0.3s ease;
+}
+.tag-glow:hover {
+  border-color: rgba(88, 166, 255, 0.5);
+  box-shadow: 0 0 12px rgba(88, 166, 255, 0.15);
+  color: #58a6ff;
+}
+
+/* Stat counter animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Timeline enhanced */
+.timeline-line {
+  background: linear-gradient(180deg, #58a6ff 0%, #21262d 100%);
+}

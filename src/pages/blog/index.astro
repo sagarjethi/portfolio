@@ -29,7 +29,7 @@ function formatDate(date: Date): string {
       ) : (
         <div class="space-y-8">
           {posts.map(post => (
-            <a href={`/portfolio/blog/${post.slug}`} class="block group">
+            <a href={`/blog/${post.slug}`} class="block group">
               <article class="border border-border p-6 hover:border-accent/40 transition-colors duration-300">
                 <div class="flex flex-wrap items-center gap-3 mb-3">
                   <time class="font-fira text-xs text-muted">{formatDate(post.data.date)}</time>

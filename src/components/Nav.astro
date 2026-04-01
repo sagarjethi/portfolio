@@ -2,15 +2,27 @@
 const navLinks = [
   { label: 'Work', href: '#projects' },
   { label: 'About', href: '#about' },
-  { label: 'Blog', href: '/portfolio/blog' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '#contact' },
 ];
 ---
 
 <nav id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
   <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-    <a href="/portfolio/" class="font-fira text-accent text-lg font-medium tracking-tight hover:opacity-80 transition-opacity">
-      SJ
+    <a href="/" class="hover:opacity-80 transition-opacity flex items-center gap-2">
+      <svg viewBox="0 0 48 48" class="w-8 h-8">
+        <defs>
+          <linearGradient id="nav-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#58a6ff" />
+            <stop offset="100%" style="stop-color:#1f6feb" />
+          </linearGradient>
+        </defs>
+        <path d="M24 2 L44 14 L44 34 L24 46 L4 34 L4 14 Z" fill="#0d1117" stroke="url(#nav-glow)" stroke-width="1.5"/>
+        <path d="M18.5 16.5 C18.5 14.5 20.5 13 24 13 C27.5 13 29.5 14.5 29.5 16.5 C29.5 19 27 20 24 21 C21 22 18.5 23 18.5 25.5 C18.5 28 20.5 29.5 24 29.5" fill="none" stroke="url(#nav-glow)" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M27 13 L27 26 C27 28.5 25.5 29.5 24 29.5" fill="none" stroke="#c9d1d9" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="27" cy="35" r="1.5" fill="#58a6ff"/>
+      </svg>
+      <span class="font-fira text-accent text-sm font-medium hidden sm:inline">Sagar Jethi</span>
     </a>
 
     <!-- Desktop links -->

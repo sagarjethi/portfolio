@@ -1,14 +1,26 @@
 ---
 const experiences = [
   {
+    company: 'Stealth Startup',
+    role: 'Blockchain Consultant · OnRamp/OffRamp Aggregator & Crypto Payment Product',
+    period: 'Jan 2026 - Present',
+    points: [
+      'Building the full OnRamp/OffRamp Aggregator end-to-end with smart routing across multiple providers.',
+      'Handling KYC/AML, payment rails, wallet settlement, and smart contract development.',
+      'Product research across Transak, MoonPay, Ramp Network and end-to-end technical documentation.',
+    ],
+    current: true,
+  },
+  {
     company: 'Gintonic AI',
     url: 'https://www.gintonic.ai/',
     role: 'Full Stack Product Developer',
-    period: 'Dec 2024 — Present',
+    period: 'Dec 2024 - Present',
     points: [
       'Engineered LLM-powered AI agents with LangChain, CrewAI, and AutoGen for real-time function calling and API integrations.',
       'Deployed smart contracts (ERC-20, ERC-721, ERC-1155) for AI-driven decentralized applications.',
     ],
+    current: true,
   },
   {
     company: 'Private AI',
@@ -23,7 +35,7 @@ const experiences = [
   {
     company: 'Velvet Capital',
     url: 'https://www.velvet.capital/',
-    role: 'Core Team — Blockchain Architect',
+    role: 'Core Team, Blockchain Architect',
     period: '2022',
     points: [
       'Researched and analyzed DeFi products across tokenomics, liquidity protocols, and yield optimization.',
@@ -33,7 +45,7 @@ const experiences = [
   {
     company: 'Independent Consultant',
     role: 'Blockchain Development',
-    period: '2019 — 2021',
+    period: '2019 - 2021',
     points: [
       'Designed and deployed smart contracts for DeFi platforms, tokenized assets, and NFT marketplaces.',
       'Advised enterprises and startups on blockchain architecture, tokenomics, and governance.',
@@ -49,51 +61,84 @@ const experiences = [
     ],
   },
   {
+    company: 'Techitree Solutions',
+    role: 'Senior Consultant, Web Development',
+    period: '2019',
+    points: [
+      'Built full-stack web applications using React.js, Vue.js, Node.js, and Python.',
+      'Led front-end development of responsive interfaces and integrated backend APIs.',
+    ],
+  },
+  {
     company: 'DomusCoins',
     role: 'Blockchain Developer',
-    period: '2018 — 2019',
+    period: '2018 - 2019',
     points: [
       'Deployed smart contracts on Ethereum for secure, efficient token operations.',
       'Built decentralized applications integrating frontend interfaces with blockchain backends.',
     ],
   },
+  {
+    company: 'CodeCrunch TechLabs',
+    role: 'Fullstack Developer',
+    period: '2016 - 2018',
+    points: [
+      'Built and maintained the studentdesk.in platform with frontend and backend features.',
+      'Developed responsive web and mobile applications with cross-platform performance.',
+    ],
+  },
 ];
 ---
 
-<section id="experience" class="py-20 px-6">
-  <div class="max-w-3xl mx-auto">
-    <h2 class="font-sora text-2xl font-bold mb-2">Experience</h2>
-    <div class="w-12 h-0.5 bg-accent mb-10"></div>
+<section id="experience" class="py-24 px-6">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-16">
+      <span class="font-fira text-xs text-accent tracking-widest uppercase block mb-3">Career Path</span>
+      <h2 class="font-sora text-3xl md:text-4xl font-bold inline-block section-title">Experience</h2>
+      <p class="text-muted mt-6 max-w-xl mx-auto">A decade of building across AI, blockchain, and full-stack development.</p>
+    </div>
 
     <div class="relative">
       <!-- Timeline line -->
-      <div class="absolute left-0 top-2 bottom-2 w-px bg-border md:left-[7px]"></div>
+      <div class="absolute left-[15px] md:left-1/2 md:-translate-x-px top-0 bottom-0 w-[2px] timeline-line"></div>
 
-      <div class="space-y-10 pl-8">
-        {experiences.map(exp => (
-          <div class="relative">
+      <div class="space-y-8">
+        {experiences.map((exp, i) => (
+          <div class={`relative flex flex-col md:flex-row gap-4 md:gap-8 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
             <!-- Timeline dot -->
-            <div class="absolute -left-8 top-1.5 w-[15px] h-[15px] rounded-full border-2 border-accent bg-primary md:-left-[25px]"></div>
+            <div class="absolute left-[8px] md:left-1/2 md:-translate-x-1/2 top-6 z-10">
+              <div class={`w-[16px] h-[16px] rounded-full border-2 ${exp.current ? 'border-accent bg-accent/20 shadow-lg shadow-accent/30' : 'border-accent/50 bg-primary'}`}></div>
+            </div>
 
-            <div>
-              <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
-                {exp.url ? (
-                  <a href={exp.url} target="_blank" rel="noopener noreferrer" class="font-sora font-semibold text-text hover:text-accent transition-colors">
-                    {exp.company}
-                  </a>
-                ) : (
-                  <span class="font-sora font-semibold text-text">{exp.company}</span>
-                )}
-                <span class="font-fira text-xs text-muted">{exp.period}</span>
+            <!-- Content card -->
+            <div class={`ml-10 md:ml-0 md:w-[calc(50%-2rem)] ${i % 2 === 0 ? '' : 'md:ml-auto'}`}>
+              <div class="glow-card rounded-lg p-6">
+                <div class="flex items-center gap-3 mb-2">
+                  {exp.current && (
+                    <span class="font-fira text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded-full border border-accent/20">Current</span>
+                  )}
+                  <span class="font-fira text-xs text-muted">{exp.period}</span>
+                </div>
+
+                <div class="mb-1">
+                  {exp.url ? (
+                    <a href={exp.url} target="_blank" rel="noopener noreferrer" class="font-sora text-lg font-semibold text-text hover:text-accent transition-colors">
+                      {exp.company} ↗
+                    </a>
+                  ) : (
+                    <span class="font-sora text-lg font-semibold text-text">{exp.company}</span>
+                  )}
+                </div>
+                <p class="font-fira text-sm text-accent mb-4">{exp.role}</p>
+
+                <ul class="space-y-2">
+                  {exp.points.map(point => (
+                    <li class="text-muted text-sm leading-relaxed pl-4 relative before:content-[''] before:absolute before:left-0 before:top-[9px] before:w-1.5 before:h-1.5 before:rounded-full before:bg-accent/40">
+                      {point}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <p class="font-fira text-sm text-accent mb-3">{exp.role}</p>
-              <ul class="space-y-2">
-                {exp.points.map(point => (
-                  <li class="text-muted text-sm leading-relaxed pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-border">
-                    {point}
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         ))}

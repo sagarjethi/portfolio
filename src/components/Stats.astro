@@ -1,17 +1,18 @@
 ---
 const stats = [
-  { number: '10+', label: 'Years Experience' },
-  { number: '30+', label: 'AI Agents Built' },
-  { number: '$5M+', label: 'Raised by Projects' },
-  { number: '8+', label: 'Years in Blockchain' },
+  { number: '10+', label: 'Years Shipping Code', icon: '⟐' },
+  { number: '30+', label: 'AI Agents Deployed', icon: '◈' },
+  { number: '$5M+', label: 'Raised via Smart Contracts', icon: '△' },
+  { number: '2,000+', label: 'Students Mentored', icon: '◉' },
 ];
 ---
 
-<section class="py-16 px-6 border-y border-border">
-  <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-    {stats.map(stat => (
-      <div class="text-center">
-        <div class="font-sora text-3xl md:text-4xl font-bold text-accent mb-1">
+<section class="section-accent-bg py-20 px-6">
+  <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+    {stats.map((stat, i) => (
+      <div class="text-center p-6 rounded-lg bg-primary/50 border border-border/50 backdrop-blur-sm hover:border-accent/30 transition-all duration-300 hover:shadow-lg hover:shadow-accent/5">
+        <div class="font-fira text-accent/40 text-2xl mb-3">{stat.icon}</div>
+        <div class="font-sora text-3xl md:text-4xl font-bold text-accent mb-2">
           {stat.number}
         </div>
         <div class="font-fira text-xs text-muted tracking-wide uppercase">
