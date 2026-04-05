@@ -3,37 +3,17 @@
 ---
 
 <section id="hero" class="py-20 md:py-28 px-6 relative overflow-hidden min-h-[85vh] flex items-center">
-  <!-- Abstract background -->
-  <div class="absolute inset-0 opacity-[0.08]">
-    <img src="/images/hero-abstract.jpg" alt="" class="w-full h-full object-cover" aria-hidden="true" loading="eager" />
-  </div>
-
-  <!-- Floating 3D elements -->
+  <!-- Subtle geometric background — pure CSS, no AI -->
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-    <!-- Smart contract glass element — top right -->
-    <img
-      src="/images/hero-element-1.jpg"
-      alt=""
-      class="hero-float absolute top-[8%] right-[5%] w-28 md:w-36 rounded-2xl opacity-[0.35] mix-blend-multiply"
-      style="animation-delay: 0s;"
-      loading="eager"
-    />
-    <!-- Blockchain cube — middle right -->
-    <img
-      src="/images/hero-element-2.jpg"
-      alt=""
-      class="hero-float absolute top-[45%] right-[2%] w-24 md:w-32 rounded-2xl opacity-[0.3] mix-blend-multiply"
-      style="animation-delay: 2s;"
-      loading="eager"
-    />
-    <!-- AI brain — bottom right -->
-    <img
-      src="/images/hero-element-3.jpg"
-      alt=""
-      class="hero-float absolute bottom-[10%] right-[15%] w-20 md:w-28 rounded-2xl opacity-[0.25] mix-blend-multiply"
-      style="animation-delay: 4s;"
-      loading="eager"
-    />
+    <!-- Warm gradient wash -->
+    <div class="absolute inset-0 bg-gradient-to-br from-primary via-primary to-accent/[0.03]"></div>
+    <!-- Grid pattern -->
+    <div class="absolute inset-0 opacity-[0.025]" style="background-image: linear-gradient(#E8763A 1px, transparent 1px), linear-gradient(90deg, #E8763A 1px, transparent 1px); background-size: 60px 60px;"></div>
+    <!-- Large accent circle — top right -->
+    <div class="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full border border-accent/[0.06]"></div>
+    <div class="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full border border-accent/[0.04]"></div>
+    <!-- Small accent circle — bottom left -->
+    <div class="absolute -bottom-16 -left-16 w-[250px] h-[250px] rounded-full border border-accent/[0.05]"></div>
   </div>
 
   <div class="max-w-3xl mx-auto relative">
@@ -52,17 +32,7 @@
     <h1 class="font-sans text-3xl md:text-4xl lg:text-5xl font-bold text-text leading-[1.15] mb-6 animate-fade-in animate-fade-in-d2">
       I build production blockchain<br class="hidden md:block" />
       systems that handle<br class="hidden md:block" />
-      <span class="text-accent relative">
-        real money
-        <svg class="absolute -bottom-1 left-0 w-full h-2 text-accent/20" viewBox="0 0 200 8" preserveAspectRatio="none">
-          <path d="M0 7 C50 0, 100 0, 200 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
-        </svg>
-      </span> and <span class="text-accent relative">
-        real users
-        <svg class="absolute -bottom-1 left-0 w-full h-2 text-accent/20" viewBox="0 0 200 8" preserveAspectRatio="none">
-          <path d="M0 7 C50 0, 100 0, 200 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
-        </svg>
-      </span>.
+      <span class="text-accent">real money</span> and <span class="text-accent">real users</span>.
     </h1>
 
     <p class="text-muted text-base md:text-lg leading-relaxed max-w-2xl mb-12 animate-fade-in animate-fade-in-d3">
@@ -70,44 +40,19 @@
       from architecture to mainnet.
     </p>
 
-    <!-- Stats -->
-    <div class="flex flex-wrap items-start gap-8 md:gap-12 mb-12 animate-fade-in animate-fade-in-d4">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-lg bg-accent/5 border border-accent/10 flex items-center justify-center flex-shrink-0">
-          <svg class="w-4 h-4 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke-linecap="round" />
-            <path d="M22 4L12 14.01l-3-3" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </div>
-        <div>
-          <span class="font-sans text-2xl md:text-3xl font-bold text-text stat-number">30+</span>
-          <span class="block font-mono text-[10px] text-muted mt-0.5 tracking-wide uppercase">Projects Delivered</span>
-        </div>
+    <!-- Stats — clean, no icons -->
+    <div class="grid grid-cols-3 gap-6 md:gap-10 mb-12 animate-fade-in animate-fade-in-d4">
+      <div class="border-l-2 border-accent/30 pl-4">
+        <span class="font-sans text-2xl md:text-3xl font-bold text-text">30+</span>
+        <span class="block font-mono text-[10px] text-muted mt-1 tracking-wide uppercase">Projects Delivered</span>
       </div>
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-lg bg-accent/5 border border-accent/10 flex items-center justify-center flex-shrink-0">
-          <svg class="w-4 h-4 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-          </svg>
-        </div>
-        <div>
-          <span class="font-sans text-2xl md:text-3xl font-bold text-text stat-number">20+</span>
-          <span class="block font-mono text-[10px] text-muted mt-0.5 tracking-wide uppercase">Hackathons Won & Judged</span>
-        </div>
+      <div class="border-l-2 border-accent/30 pl-4">
+        <span class="font-sans text-2xl md:text-3xl font-bold text-text">20+</span>
+        <span class="block font-mono text-[10px] text-muted mt-1 tracking-wide uppercase">Hackathons Won</span>
       </div>
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-lg bg-accent/5 border border-accent/10 flex items-center justify-center flex-shrink-0">
-          <svg class="w-4 h-4 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-            <circle cx="9" cy="7" r="4" />
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-          </svg>
-        </div>
-        <div>
-          <span class="font-sans text-2xl md:text-3xl font-bold text-text stat-number">2,000+</span>
-          <span class="block font-mono text-[10px] text-muted mt-0.5 tracking-wide uppercase">Developers Educated</span>
-        </div>
+      <div class="border-l-2 border-accent/30 pl-4">
+        <span class="font-sans text-2xl md:text-3xl font-bold text-text">2,000+</span>
+        <span class="block font-mono text-[10px] text-muted mt-1 tracking-wide uppercase">Devs Educated</span>
       </div>
     </div>
 
@@ -131,13 +76,3 @@
     </div>
   </div>
 </section>
-
-<style>
-  @keyframes heroFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
-  }
-  .hero-float {
-    animation: heroFloat 6s ease-in-out infinite;
-  }
-</style>
