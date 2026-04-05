@@ -3,75 +3,78 @@
 ---
 
 <section id="hero" class="py-20 md:py-28 px-6 relative overflow-hidden min-h-[85vh] flex items-center">
-  <!-- Subtle geometric background — pure CSS, no AI -->
+  <!-- Subtle geometric background -->
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-    <!-- Warm gradient wash -->
     <div class="absolute inset-0 bg-gradient-to-br from-primary via-primary to-accent/[0.03]"></div>
-    <!-- Grid pattern -->
     <div class="absolute inset-0 opacity-[0.025]" style="background-image: linear-gradient(#E8763A 1px, transparent 1px), linear-gradient(90deg, #E8763A 1px, transparent 1px); background-size: 60px 60px;"></div>
-    <!-- Large accent circle — top right -->
     <div class="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full border border-accent/[0.06]"></div>
     <div class="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full border border-accent/[0.04]"></div>
-    <!-- Small accent circle — bottom left -->
     <div class="absolute -bottom-16 -left-16 w-[250px] h-[250px] rounded-full border border-accent/[0.05]"></div>
   </div>
 
-  <!-- Floating 3D shapes — right side -->
+  <!-- Floating 3D shapes -->
   <div class="hidden md:block absolute right-0 top-0 bottom-0 w-[40%] pointer-events-none" aria-hidden="true">
     <img
       src="/images/hero-3d-1.jpg"
       alt=""
-      class="hero-float absolute top-[10%] right-[10%] w-32 lg:w-40 rounded-2xl opacity-70 mix-blend-multiply drop-shadow-lg"
-      style="animation-delay: 0s;"
+      class="hero-float-el absolute top-[10%] right-[10%] w-32 lg:w-40 rounded-2xl mix-blend-multiply drop-shadow-lg"
+      style="--float-delay: 0s; --float-duration: 6s;"
       loading="eager"
     />
     <img
       src="/images/hero-3d-2.jpg"
       alt=""
-      class="hero-float absolute top-[45%] right-[25%] w-28 lg:w-36 rounded-2xl opacity-60 mix-blend-multiply drop-shadow-lg"
-      style="animation-delay: 2s;"
+      class="hero-float-el absolute top-[45%] right-[25%] w-28 lg:w-36 rounded-2xl mix-blend-multiply drop-shadow-lg"
+      style="--float-delay: 2s; --float-duration: 7s;"
       loading="eager"
     />
     <img
       src="/images/hero-3d-3.jpg"
       alt=""
-      class="hero-float absolute bottom-[12%] right-[8%] w-24 lg:w-32 rounded-2xl opacity-65 mix-blend-multiply drop-shadow-lg"
-      style="animation-delay: 4s;"
+      class="hero-float-el absolute bottom-[12%] right-[8%] w-24 lg:w-32 rounded-2xl mix-blend-multiply drop-shadow-lg"
+      style="--float-delay: 4s; --float-duration: 8s;"
       loading="eager"
     />
   </div>
 
   <div class="max-w-3xl mx-auto relative">
-    <!-- Main headline -->
-    <h1 class="font-sans text-3xl md:text-4xl lg:text-5xl font-bold text-text leading-[1.15] mb-6 animate-fade-in animate-fade-in-d2">
-      I build production blockchain<br class="hidden md:block" />
-      systems that handle<br class="hidden md:block" />
-      <span class="text-accent">real money</span> and <span class="text-accent">real users</span>.
+    <!-- Headline -->
+    <h1 class="hero-headline font-sans text-3xl md:text-4xl lg:text-5xl font-bold text-text leading-[1.15] mb-6">
+      <span class="hero-word">I</span>
+      <span class="hero-word">build</span>
+      <span class="hero-word">production</span>
+      <span class="hero-word">blockchain</span><br class="hidden md:block" />
+      <span class="hero-word">systems</span>
+      <span class="hero-word">that</span>
+      <span class="hero-word">handle</span><br class="hidden md:block" />
+      <span class="hero-word text-accent">real&nbsp;money</span>
+      <span class="hero-word">and</span>
+      <span class="hero-word text-accent">real&nbsp;users</span><span class="hero-word">.</span>
     </h1>
 
-    <p class="text-muted text-base md:text-lg leading-relaxed max-w-2xl mb-12 animate-fade-in animate-fade-in-d3">
+    <p class="hero-desc text-muted text-base md:text-lg leading-relaxed max-w-2xl mb-12">
       Over 10 years of shipping smart contracts, DeFi protocols, and AI-powered platforms —
       from architecture to mainnet.
     </p>
 
-    <!-- Stats — clean, no icons -->
-    <div class="grid grid-cols-3 gap-6 md:gap-10 mb-12 animate-fade-in animate-fade-in-d4">
-      <div class="border-l-2 border-accent/30 pl-4">
+    <!-- Stats -->
+    <div class="hero-stats grid grid-cols-3 gap-6 md:gap-10 mb-12">
+      <div class="hero-stat border-l-2 border-accent/30 pl-4">
         <span class="font-sans text-2xl md:text-3xl font-bold text-text">30+</span>
         <span class="block font-mono text-[10px] text-muted mt-1 tracking-wide uppercase">Projects Delivered</span>
       </div>
-      <div class="border-l-2 border-accent/30 pl-4">
+      <div class="hero-stat border-l-2 border-accent/30 pl-4">
         <span class="font-sans text-2xl md:text-3xl font-bold text-text">20+</span>
         <span class="block font-mono text-[10px] text-muted mt-1 tracking-wide uppercase">Hackathons Won</span>
       </div>
-      <div class="border-l-2 border-accent/30 pl-4">
+      <div class="hero-stat border-l-2 border-accent/30 pl-4">
         <span class="font-sans text-2xl md:text-3xl font-bold text-text">2,000+</span>
         <span class="block font-mono text-[10px] text-muted mt-1 tracking-wide uppercase">Devs Educated</span>
       </div>
     </div>
 
-    <!-- CTA Buttons -->
-    <div class="flex flex-col sm:flex-row gap-4 animate-fade-in animate-fade-in-d5">
+    <!-- CTA -->
+    <div class="hero-cta flex flex-col sm:flex-row gap-4">
       <a
         href="#projects"
         class="group inline-flex items-center justify-center gap-2 font-sans text-sm font-medium bg-accent text-white px-8 py-3.5 rounded-lg hover:bg-[#D4652E] transition-all duration-200 shadow-sm hover:shadow-md hover:shadow-accent/10"
@@ -92,11 +95,65 @@
 </section>
 
 <style>
+  /* Float animation for 3D elements */
   @keyframes heroFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-14px); }
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-14px) rotate(1.5deg); }
   }
-  .hero-float {
-    animation: heroFloat 6s ease-in-out infinite;
+  .hero-float-el {
+    opacity: 0;
+    animation: heroFloat var(--float-duration, 6s) ease-in-out infinite;
+    animation-delay: var(--float-delay, 0s);
+  }
+
+  /* Words start hidden for Motion.dev */
+  .hero-word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  .hero-desc, .hero-stats, .hero-cta {
+    opacity: 0;
+    transform: translateY(16px);
   }
 </style>
+
+<script>
+  import { animate, stagger } from "motion";
+
+  // Word-by-word headline reveal
+  const words = document.querySelectorAll('.hero-word');
+  animate(
+    words,
+    { opacity: [0, 1], y: [20, 0] },
+    { duration: 0.5, delay: stagger(0.04, { startDelay: 0.2 }), easing: [0.22, 0.68, 0, 1.1] }
+  );
+
+  // Description fade in
+  const desc = document.querySelector('.hero-desc');
+  if (desc) {
+    animate(desc, { opacity: [0, 1], y: [16, 0] }, { duration: 0.6, delay: 0.7, easing: [0.22, 0.68, 0, 1] });
+  }
+
+  // Stats staggered reveal
+  const stats = document.querySelectorAll('.hero-stat');
+  animate(
+    stats,
+    { opacity: [0, 1], y: [16, 0] },
+    { duration: 0.5, delay: stagger(0.12, { startDelay: 0.9 }), easing: [0.22, 0.68, 0, 1] }
+  );
+
+  // CTA slide up
+  const cta = document.querySelector('.hero-cta');
+  if (cta) {
+    animate(cta, { opacity: [0, 1], y: [16, 0] }, { duration: 0.5, delay: 1.3, easing: [0.22, 0.68, 0, 1] });
+  }
+
+  // Floating 3D elements fade in
+  const floats = document.querySelectorAll('.hero-float-el');
+  animate(
+    floats,
+    { opacity: [0, 0.65] },
+    { duration: 1.2, delay: stagger(0.3, { startDelay: 0.5 }), easing: 'ease-out' }
+  );
+</script>

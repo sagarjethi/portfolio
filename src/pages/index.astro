@@ -17,36 +17,46 @@ import Footer from '../components/Footer.astro';
   <Sidebar />
   <main class="lg:ml-[280px] min-h-screen">
     <Hero />
-    <div class="reveal"><About /></div>
-    <div class="reveal"><Experience /></div>
-    <div class="reveal"><Projects /></div>
-    <div class="reveal"><Skills /></div>
-    <div class="reveal"><Volunteer /></div>
-    <div class="reveal"><BlogPreview /></div>
-    <div class="reveal"><Education /></div>
-    <div class="reveal"><Contact /></div>
+    <div class="scroll-section"><About /></div>
+    <div class="scroll-section"><Experience /></div>
+    <div class="scroll-section"><Projects /></div>
+    <div class="scroll-section"><Skills /></div>
+    <div class="scroll-section"><Volunteer /></div>
+    <div class="scroll-section"><BlogPreview /></div>
+    <div class="scroll-section"><Education /></div>
+    <div class="scroll-section"><Contact /></div>
     <Footer />
   </main>
 </BaseLayout>
 
+<style>
+  .scroll-section {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+</style>
+
 <script>
-  // Scroll-reveal animation using IntersectionObserver
-  const revealElements = document.querySelectorAll('.reveal');
+  import { animate, stagger, inView } from "motion";
 
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.08,
-      rootMargin: '0px 0px -40px 0px',
-    }
-  );
+  // Scroll-triggered section reveals
+  document.querySelectorAll('.scroll-section').forEach((section) => {
+    inView(section, () => {
+      animate(
+        section,
+        { opacity: [0, 1], y: [24, 0] },
+        { duration: 0.6, easing: [0.22, 0.68, 0, 1] }
+      );
 
-  revealElements.forEach((el) => revealObserver.observe(el));
+      // Stagger cards within the section
+      const cards = section.querySelectorAll('.bg-card, .glow-card, [class*="rounded-xl"]');
+      if (cards.length > 1) {
+        animate(
+          cards,
+          { opacity: [0, 1], y: [12, 0] },
+          { duration: 0.4, delay: stagger(0.08, { startDelay: 0.15 }), easing: [0.22, 0.68, 0, 1] }
+        );
+      }
+    }, { amount: 0.15 });
+  });
 </script>

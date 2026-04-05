@@ -111,50 +111,15 @@
   color: #E8763A;
 }
 
-/* === Professional Page Animations === */
+/* === Animations (Motion.dev handles main animations via JS) === */
 
-/* Staggered fade-in on page load */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInLeft {
-  from { opacity: 0; transform: translateX(-16px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
+/* Sidebar entrance */
 @keyframes slideInSidebar {
   from { opacity: 0; transform: translateX(-20px); }
   to { opacity: 1; transform: translateX(0); }
 }
-
-/* Page load animations — staggered cascade */
-.animate-fade-in {
-  opacity: 0;
-  animation: fadeIn 0.5s cubic-bezier(.2,.8,.2,1) forwards;
-}
-
-.animate-fade-in-d1 { animation-delay: 0.05s; }
-.animate-fade-in-d2 { animation-delay: 0.12s; }
-.animate-fade-in-d3 { animation-delay: 0.2s; }
-.animate-fade-in-d4 { animation-delay: 0.3s; }
-.animate-fade-in-d5 { animation-delay: 0.4s; }
-
-/* Scroll-triggered reveal */
-.reveal {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.5s cubic-bezier(.2,.8,.2,1), transform 0.5s cubic-bezier(.2,.8,.2,1);
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Sidebar entrance */
 .sidebar-animate {
-  animation: slideInSidebar 0.4s cubic-bezier(.2,.8,.2,1) forwards;
+  animation: slideInSidebar 0.4s cubic-bezier(.22,.68,0,1) forwards;
 }
 
 /* Smooth card interactions */
