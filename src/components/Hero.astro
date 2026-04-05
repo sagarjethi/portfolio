@@ -3,7 +3,7 @@
 ---
 
 <section id="hero" class="py-20 md:py-28 px-6 relative overflow-hidden min-h-[85vh] flex items-center">
-  <!-- Subtle geometric background -->
+  <!-- Geometric background -->
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
     <div class="absolute inset-0 bg-gradient-to-br from-primary via-primary to-accent/[0.03]"></div>
     <div class="absolute inset-0 opacity-[0.025]" style="background-image: linear-gradient(#E8763A 1px, transparent 1px), linear-gradient(90deg, #E8763A 1px, transparent 1px); background-size: 60px 60px;"></div>
@@ -12,34 +12,19 @@
     <div class="absolute -bottom-16 -left-16 w-[250px] h-[250px] rounded-full border border-accent/[0.05]"></div>
   </div>
 
+  <!-- Pretext Canvas — interactive particle text effect -->
+  <canvas id="hero-canvas" class="absolute inset-0 w-full h-full pointer-events-none hidden md:block" aria-hidden="true"></canvas>
+
   <!-- Floating 3D shapes -->
-  <div class="hidden md:block absolute right-0 top-0 bottom-0 w-[40%] pointer-events-none" aria-hidden="true">
-    <img
-      src="/images/hero-3d-1.jpg"
-      alt=""
-      class="hero-float-el absolute top-[10%] right-[10%] w-32 lg:w-40 rounded-2xl mix-blend-multiply drop-shadow-lg"
-      style="--float-delay: 0s; --float-duration: 6s;"
-      loading="eager"
-    />
-    <img
-      src="/images/hero-3d-2.jpg"
-      alt=""
-      class="hero-float-el absolute top-[45%] right-[25%] w-28 lg:w-36 rounded-2xl mix-blend-multiply drop-shadow-lg"
-      style="--float-delay: 2s; --float-duration: 7s;"
-      loading="eager"
-    />
-    <img
-      src="/images/hero-3d-3.jpg"
-      alt=""
-      class="hero-float-el absolute bottom-[12%] right-[8%] w-24 lg:w-32 rounded-2xl mix-blend-multiply drop-shadow-lg"
-      style="--float-delay: 4s; --float-duration: 8s;"
-      loading="eager"
-    />
+  <div class="hidden lg:block absolute right-0 top-0 bottom-0 w-[35%] pointer-events-none" aria-hidden="true">
+    <img src="/images/hero-3d-1.jpg" alt="" class="hero-float-el absolute top-[10%] right-[10%] w-32 lg:w-36 rounded-2xl mix-blend-multiply drop-shadow-lg" style="--fd: 0s; --ft: 6s;" loading="eager" />
+    <img src="/images/hero-3d-2.jpg" alt="" class="hero-float-el absolute top-[45%] right-[22%] w-28 lg:w-32 rounded-2xl mix-blend-multiply drop-shadow-lg" style="--fd: 2s; --ft: 7s;" loading="eager" />
+    <img src="/images/hero-3d-3.jpg" alt="" class="hero-float-el absolute bottom-[12%] right-[6%] w-24 lg:w-28 rounded-2xl mix-blend-multiply drop-shadow-lg" style="--fd: 4s; --ft: 8s;" loading="eager" />
   </div>
 
-  <div class="max-w-3xl mx-auto relative">
+  <div class="max-w-3xl mx-auto relative z-10">
     <!-- Headline -->
-    <h1 class="hero-headline font-sans text-3xl md:text-4xl lg:text-5xl font-bold text-text leading-[1.15] mb-6">
+    <h1 class="hero-word-wrap font-sans text-3xl md:text-4xl lg:text-5xl font-bold text-text leading-[1.15] mb-6">
       <span class="hero-word">I</span>
       <span class="hero-word">build</span>
       <span class="hero-word">production</span>
@@ -52,108 +37,156 @@
       <span class="hero-word text-accent">real&nbsp;users</span><span class="hero-word">.</span>
     </h1>
 
-    <p class="hero-desc text-muted text-base md:text-lg leading-relaxed max-w-2xl mb-12">
+    <p class="hero-fade text-muted text-base md:text-lg leading-relaxed max-w-2xl mb-12">
       Over 10 years of shipping smart contracts, DeFi protocols, and AI-powered platforms —
       from architecture to mainnet.
     </p>
 
     <!-- Stats -->
-    <div class="hero-stats grid grid-cols-3 gap-6 md:gap-10 mb-12">
-      <div class="hero-stat border-l-2 border-accent/30 pl-4">
+    <div class="hero-fade grid grid-cols-3 gap-6 md:gap-10 mb-12" style="--delay: 0.9s;">
+      <div class="border-l-2 border-accent/30 pl-4">
         <span class="font-sans text-2xl md:text-3xl font-bold text-text">30+</span>
         <span class="block font-mono text-[10px] text-muted mt-1 tracking-wide uppercase">Projects Delivered</span>
       </div>
-      <div class="hero-stat border-l-2 border-accent/30 pl-4">
+      <div class="border-l-2 border-accent/30 pl-4">
         <span class="font-sans text-2xl md:text-3xl font-bold text-text">20+</span>
         <span class="block font-mono text-[10px] text-muted mt-1 tracking-wide uppercase">Hackathons Won</span>
       </div>
-      <div class="hero-stat border-l-2 border-accent/30 pl-4">
+      <div class="border-l-2 border-accent/30 pl-4">
         <span class="font-sans text-2xl md:text-3xl font-bold text-text">2,000+</span>
         <span class="block font-mono text-[10px] text-muted mt-1 tracking-wide uppercase">Devs Educated</span>
       </div>
     </div>
 
     <!-- CTA -->
-    <div class="hero-cta flex flex-col sm:flex-row gap-4">
-      <a
-        href="#projects"
-        class="group inline-flex items-center justify-center gap-2 font-sans text-sm font-medium bg-accent text-white px-8 py-3.5 rounded-lg hover:bg-[#D4652E] transition-all duration-200 shadow-sm hover:shadow-md hover:shadow-accent/10"
-      >
+    <div class="hero-fade flex flex-col sm:flex-row gap-4" style="--delay: 1.1s;">
+      <a href="#projects" class="group inline-flex items-center justify-center gap-2 font-sans text-sm font-medium bg-accent text-white px-8 py-3.5 rounded-lg hover:bg-[#D4652E] transition-all duration-200 shadow-sm hover:shadow-md hover:shadow-accent/10">
         View My Work
-        <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg>
+        <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
       </a>
-      <a
-        href="#contact"
-        class="inline-flex items-center justify-center font-sans text-sm font-medium border border-border text-muted px-8 py-3.5 rounded-lg hover:border-accent hover:text-accent transition-all duration-200"
-      >
-        Get In Touch
-      </a>
+      <a href="#contact" class="inline-flex items-center justify-center font-sans text-sm font-medium border border-border text-muted px-8 py-3.5 rounded-lg hover:border-accent hover:text-accent transition-all duration-200">Get In Touch</a>
     </div>
   </div>
 </section>
 
 <style>
-  /* Float animation for 3D elements */
+  .hero-word { display: inline-block; opacity: 0; transform: translateY(20px); }
+  .hero-fade { opacity: 0; transform: translateY(16px); }
   @keyframes heroFloat {
     0%, 100% { transform: translateY(0) rotate(0deg); }
     50% { transform: translateY(-14px) rotate(1.5deg); }
   }
   .hero-float-el {
     opacity: 0;
-    animation: heroFloat var(--float-duration, 6s) ease-in-out infinite;
-    animation-delay: var(--float-delay, 0s);
-  }
-
-  /* Words start hidden for Motion.dev */
-  .hero-word {
-    display: inline-block;
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  .hero-desc, .hero-stats, .hero-cta {
-    opacity: 0;
-    transform: translateY(16px);
+    animation: heroFloat var(--ft, 6s) ease-in-out infinite;
+    animation-delay: var(--fd, 0s);
   }
 </style>
 
 <script>
   import { animate, stagger } from "motion";
+  import { prepareWithSegments, layoutWithLines } from "@chenglou/pretext";
 
-  // Word-by-word headline reveal
+  // === Motion.dev entrance animations ===
   const words = document.querySelectorAll('.hero-word');
-  animate(
-    words,
-    { opacity: [0, 1], y: [20, 0] },
-    { duration: 0.5, delay: stagger(0.04, { startDelay: 0.2 }), easing: [0.22, 0.68, 0, 1.1] }
-  );
+  animate(words, { opacity: [0, 1], y: [20, 0] }, { duration: 0.5, delay: stagger(0.04, { startDelay: 0.15 }), easing: [0.22, 0.68, 0, 1.1] });
 
-  // Description fade in
-  const desc = document.querySelector('.hero-desc');
-  if (desc) {
-    animate(desc, { opacity: [0, 1], y: [16, 0] }, { duration: 0.6, delay: 0.7, easing: [0.22, 0.68, 0, 1] });
-  }
+  document.querySelectorAll('.hero-fade').forEach((el, i) => {
+    animate(el, { opacity: [0, 1], y: [16, 0] }, { duration: 0.5, delay: 0.6 + i * 0.2, easing: [0.22, 0.68, 0, 1] });
+  });
 
-  // Stats staggered reveal
-  const stats = document.querySelectorAll('.hero-stat');
-  animate(
-    stats,
-    { opacity: [0, 1], y: [16, 0] },
-    { duration: 0.5, delay: stagger(0.12, { startDelay: 0.9 }), easing: [0.22, 0.68, 0, 1] }
-  );
-
-  // CTA slide up
-  const cta = document.querySelector('.hero-cta');
-  if (cta) {
-    animate(cta, { opacity: [0, 1], y: [16, 0] }, { duration: 0.5, delay: 1.3, easing: [0.22, 0.68, 0, 1] });
-  }
-
-  // Floating 3D elements fade in
   const floats = document.querySelectorAll('.hero-float-el');
-  animate(
-    floats,
-    { opacity: [0, 0.65] },
-    { duration: 1.2, delay: stagger(0.3, { startDelay: 0.5 }), easing: 'ease-out' }
-  );
+  animate(floats, { opacity: [0, 0.65] }, { duration: 1.2, delay: stagger(0.3, { startDelay: 0.4 }), easing: 'ease-out' });
+
+  // === Pretext Canvas — floating code snippets ===
+  const canvas = document.getElementById('hero-canvas') as HTMLCanvasElement;
+  if (canvas && window.innerWidth >= 768) {
+    const ctx = canvas.getContext('2d');
+    if (ctx) {
+      const dpr = window.devicePixelRatio || 1;
+      let w = 0, h = 0;
+
+      function resize() {
+        const rect = canvas.parentElement!.getBoundingClientRect();
+        w = rect.width;
+        h = rect.height;
+        canvas.width = w * dpr;
+        canvas.height = h * dpr;
+        ctx!.scale(dpr, dpr);
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      // Code snippets that float in the background — real Solidity/blockchain code
+      const snippets = [
+        'function transfer(address to, uint256 amount)',
+        'mapping(address => uint256) balances',
+        'emit Transfer(msg.sender, to, amount)',
+        'require(balanceOf[msg.sender] >= amount)',
+        'contract TokenVault is ERC20',
+        'modifier onlyOwner()',
+        'event Deposit(address indexed, uint256)',
+        'bytes32 public DOMAIN_SEPARATOR',
+      ];
+
+      interface FloatingText {
+        text: string;
+        x: number;
+        y: number;
+        speed: number;
+        opacity: number;
+        targetOpacity: number;
+        size: number;
+      }
+
+      const items: FloatingText[] = snippets.map((text, i) => ({
+        text,
+        x: w * 0.55 + Math.random() * w * 0.4,
+        y: Math.random() * h,
+        speed: 0.15 + Math.random() * 0.25,
+        opacity: 0,
+        targetOpacity: 0.04 + Math.random() * 0.04,
+        size: 11 + Math.random() * 3,
+      }));
+
+      // Fade items in gradually
+      items.forEach((item, i) => {
+        setTimeout(() => { item.targetOpacity = 0.04 + Math.random() * 0.04; }, 800 + i * 200);
+      });
+
+      let animId: number;
+      function draw() {
+        ctx!.clearRect(0, 0, w, h);
+
+        for (const item of items) {
+          item.y -= item.speed;
+          if (item.y < -30) {
+            item.y = h + 20;
+            item.x = w * 0.5 + Math.random() * w * 0.45;
+          }
+
+          // Ease opacity
+          item.opacity += (item.targetOpacity - item.opacity) * 0.02;
+
+          ctx!.font = `${item.size}px "JetBrains Mono", monospace`;
+          ctx!.fillStyle = `rgba(232, 118, 58, ${item.opacity})`;
+          ctx!.fillText(item.text, item.x, item.y);
+        }
+
+        animId = requestAnimationFrame(draw);
+      }
+      draw();
+
+      // Pause when not visible
+      const observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          if (!animId) draw();
+        } else {
+          cancelAnimationFrame(animId);
+          animId = 0;
+        }
+      });
+      observer.observe(canvas);
+    }
+  }
 </script>

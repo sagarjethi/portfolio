@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/rss": "^4.0.11",
     "@astrojs/tailwind": "^5.1.3",
+    "@chenglou/pretext": "^0.0.4",
     "@tailwindcss/typography": "^0.5.19",
     "astro": "^5.18.1",
     "motion": "^12.38.0",
