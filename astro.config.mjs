@@ -3,7 +3,7 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   integrations: [tailwind()],
-  site: 'https://sagarjethi.github.io',
+  site: 'https://sagarjethi.com',
   markdown: {
     shikiConfig: {
       theme: 'github-dark',
