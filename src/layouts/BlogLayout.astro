@@ -1,6 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
-import Nav from '../components/Nav.astro';
+import Sidebar from '../components/Sidebar.astro';
 import Footer from '../components/Footer.astro';
 
 interface Props {
@@ -22,37 +22,39 @@ function formatDate(date: Date): string {
 ---
 
 <BaseLayout title={`${title} — Sagar Jethi`} description={description}>
-  <Nav />
-  <article class="pt-32 pb-20 px-6">
-    <div class="max-w-3xl mx-auto">
-      <a href="/blog" class="font-fira text-sm text-muted hover:text-accent transition-colors mb-8 inline-block">&larr; Back to blog</a>
+  <Sidebar />
+  <div class="lg:ml-[280px] min-h-screen">
+    <article class="py-20 px-6">
+      <div class="max-w-3xl mx-auto">
+        <a href="/blog" class="font-mono text-sm text-muted hover:text-accent transition-colors mb-8 inline-block">&larr; Back to blog</a>
 
-      <header class="mb-12">
-        <h1 class="font-sora text-3xl md:text-4xl font-bold tracking-tight mb-4">{title}</h1>
-        <div class="flex flex-wrap items-center gap-4 text-sm text-muted">
-          <time class="font-fira">{formatDate(date)}</time>
-          <div class="flex gap-2">
-            {tags.map(tag => (
-              <span class="font-fira text-xs text-accent border border-accent/30 px-2 py-0.5">{tag}</span>
-            ))}
+        <header class="mb-12">
+          <h1 class="font-sans text-3xl md:text-4xl font-bold tracking-tight text-text mb-4">{title}</h1>
+          <div class="flex flex-wrap items-center gap-4 text-sm text-muted">
+            <time class="font-mono">{formatDate(date)}</time>
+            <div class="flex gap-2">
+              {tags.map(tag => (
+                <span class="font-mono text-xs text-accent border border-accent/30 px-2 py-0.5 rounded-full">{tag}</span>
+              ))}
+            </div>
           </div>
-        </div>
-      </header>
+        </header>
 
-      <div class="prose prose-invert max-w-none
-        prose-headings:font-sora prose-headings:text-text prose-headings:font-bold
-        prose-h2:text-xl prose-h2:mt-10 prose-h2:mb-4
-        prose-p:text-muted prose-p:leading-relaxed
-        prose-a:text-accent prose-a:no-underline hover:prose-a:underline
-        prose-strong:text-text prose-strong:font-semibold
-        prose-code:font-fira prose-code:text-accent prose-code:text-sm
-        prose-pre:bg-card prose-pre:border prose-pre:border-border prose-pre:rounded-none
-        prose-li:text-muted
-        prose-blockquote:border-accent prose-blockquote:text-muted
-      ">
-        <slot />
+        <div class="prose max-w-none
+          prose-headings:font-sans prose-headings:text-text prose-headings:font-bold
+          prose-h2:text-xl prose-h2:mt-10 prose-h2:mb-4
+          prose-p:text-muted prose-p:leading-relaxed
+          prose-a:text-accent prose-a:no-underline hover:prose-a:underline
+          prose-strong:text-text prose-strong:font-semibold
+          prose-code:font-mono prose-code:text-accent prose-code:text-sm
+          prose-pre:bg-card prose-pre:border prose-pre:border-border prose-pre:rounded-lg
+          prose-li:text-muted
+          prose-blockquote:border-accent prose-blockquote:text-muted
+        ">
+          <slot />
+        </div>
       </div>
-    </div>
-  </article>
-  <Footer />
+    </article>
+    <Footer />
+  </div>
 </BaseLayout>

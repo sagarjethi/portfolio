@@ -4,16 +4,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#0d1117',
-        card: '#161b22',
-        border: '#21262d',
-        text: '#c9d1d9',
-        muted: '#8b949e',
-        accent: '#58a6ff',
+        primary: '#FAFAF8',
+        card: '#FFFFFF',
+        border: '#E8E4DE',
+        text: '#1A1A1A',
+        muted: '#6B6B6B',
+        accent: '#E8763A',
+        surface: '#F5F3EF',
       },
       fontFamily: {
-        sora: ['Sora', 'system-ui', 'sans-serif'],
-        fira: ['Fira Code', 'monospace'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace'],
       },
     },
   },

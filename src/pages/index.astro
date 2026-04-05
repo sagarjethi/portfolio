@@ -1,8 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Nav from '../components/Nav.astro';
+import Sidebar from '../components/Sidebar.astro';
 import Hero from '../components/Hero.astro';
-import Stats from '../components/Stats.astro';
 import About from '../components/About.astro';
 import Experience from '../components/Experience.astro';
 import Projects from '../components/Projects.astro';
@@ -14,19 +13,40 @@ import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<BaseLayout title="Sagar Jethi — AI Developer & Blockchain Architect">
-  <Nav />
-  <main>
+<BaseLayout title="Sagar Jethi — Blockchain Architect & AI Engineer">
+  <Sidebar />
+  <main class="lg:ml-[280px] min-h-screen">
     <Hero />
-    <Stats />
-    <About />
-    <Experience />
-    <Projects />
-    <Skills />
-    <Volunteer />
-    <BlogPreview />
-    <Education />
-    <Contact />
+    <div class="reveal"><About /></div>
+    <div class="reveal"><Experience /></div>
+    <div class="reveal"><Projects /></div>
+    <div class="reveal"><Skills /></div>
+    <div class="reveal"><Volunteer /></div>
+    <div class="reveal"><BlogPreview /></div>
+    <div class="reveal"><Education /></div>
+    <div class="reveal"><Contact /></div>
+    <Footer />
   </main>
-  <Footer />
 </BaseLayout>
+
+<script>
+  // Scroll-reveal animation using IntersectionObserver
+  const revealElements = document.querySelectorAll('.reveal');
+
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.08,
+      rootMargin: '0px 0px -40px 0px',
+    }
+  );
+
+  revealElements.forEach((el) => revealObserver.observe(el));
+</script>

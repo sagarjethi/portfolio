@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Nav from '../../components/Nav.astro';
+import Sidebar from '../../components/Sidebar.astro';
 import Footer from '../../components/Footer.astro';
 
 const posts = (await getCollection('blog'))
@@ -18,35 +18,37 @@ function formatDate(date: Date): string {
 ---
 
 <BaseLayout title="Blog — Sagar Jethi">
-  <Nav />
-  <main class="pt-32 pb-20 px-6">
-    <div class="max-w-3xl mx-auto">
-      <h1 class="font-sora text-3xl font-bold mb-2">Blog</h1>
-      <div class="w-12 h-0.5 bg-accent mb-10"></div>
+  <Sidebar />
+  <div class="lg:ml-[280px] min-h-screen">
+    <main class="py-20 px-6">
+      <div class="max-w-3xl mx-auto">
+        <h1 class="font-sans text-3xl font-bold text-text mb-2">Blog</h1>
+        <div class="w-12 h-0.5 bg-accent mb-10"></div>
 
-      {posts.length === 0 ? (
-        <p class="text-muted">No posts yet. Check back soon.</p>
-      ) : (
-        <div class="space-y-8">
-          {posts.map(post => (
-            <a href={`/blog/${post.slug}`} class="block group">
-              <article class="border border-border p-6 hover:border-accent/40 transition-colors duration-300">
-                <div class="flex flex-wrap items-center gap-3 mb-3">
-                  <time class="font-fira text-xs text-muted">{formatDate(post.data.date)}</time>
-                  {post.data.tags.map(tag => (
-                    <span class="font-fira text-xs text-accent/70">{tag}</span>
-                  ))}
-                </div>
-                <h2 class="font-sora text-lg font-semibold text-text group-hover:text-accent transition-colors mb-2">
-                  {post.data.title}
-                </h2>
-                <p class="text-muted text-sm leading-relaxed">{post.data.description}</p>
-              </article>
-            </a>
-          ))}
-        </div>
-      )}
-    </div>
-  </main>
-  <Footer />
+        {posts.length === 0 ? (
+          <p class="text-muted">No posts yet. Check back soon.</p>
+        ) : (
+          <div class="space-y-6">
+            {posts.map(post => (
+              <a href={`/blog/${post.slug}`} class="block group">
+                <article class="bg-card border border-border/60 rounded-xl p-6 hover:border-accent/30 hover:shadow-sm transition-all duration-200">
+                  <div class="flex flex-wrap items-center gap-3 mb-3">
+                    <time class="font-mono text-xs text-muted">{formatDate(post.data.date)}</time>
+                    {post.data.tags.map(tag => (
+                      <span class="font-mono text-xs text-accent/70">{tag}</span>
+                    ))}
+                  </div>
+                  <h2 class="font-sans text-lg font-semibold text-text group-hover:text-accent transition-colors mb-2">
+                    {post.data.title}
+                  </h2>
+                  <p class="text-muted text-sm leading-relaxed">{post.data.description}</p>
+                </article>
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+    </main>
+    <Footer />
+  </div>
 </BaseLayout>

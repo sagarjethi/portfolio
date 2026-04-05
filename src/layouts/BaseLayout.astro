@@ -19,7 +19,7 @@ const { title, description = "Sagar Jethi — AI Developer & Blockchain Architec
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
@@ -29,8 +29,92 @@ const { title, description = "Sagar Jethi — AI Developer & Blockchain Architec
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <title>{title}</title>
+    <style>
+      /* Page loader - inline to avoid FOUC */
+      #page-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background: #FAFAF8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+        transition: opacity 0.4s cubic-bezier(.2,.8,.2,1), visibility 0.4s;
+      }
+      #page-loader.hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+      .loader-initials {
+        font-family: 'Inter', system-ui, sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        color: #1A1A1A;
+        letter-spacing: 4px;
+        opacity: 0;
+        animation: loaderFadeIn 0.5s cubic-bezier(.2,.8,.2,1) 0.1s forwards;
+      }
+      .loader-bar-track {
+        width: 120px;
+        height: 2px;
+        background: #E8E4DE;
+        border-radius: 2px;
+        overflow: hidden;
+        opacity: 0;
+        animation: loaderFadeIn 0.4s ease 0.3s forwards;
+      }
+      .loader-bar-fill {
+        height: 100%;
+        background: #E8763A;
+        border-radius: 2px;
+        animation: loaderProgress 0.8s cubic-bezier(.2,.8,.2,1) 0.4s forwards;
+        width: 0;
+      }
+      .loader-title {
+        font-family: 'Inter', system-ui, sans-serif;
+        font-size: 11px;
+        color: #6B6B6B;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        opacity: 0;
+        animation: loaderFadeIn 0.4s ease 0.5s forwards;
+      }
+      @keyframes loaderFadeIn {
+        from { opacity: 0; transform: translateY(6px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes loaderProgress {
+        from { width: 0; }
+        to { width: 100%; }
+      }
+    </style>
   </head>
-  <body class="bg-primary text-text min-h-screen">
+  <body class="bg-primary text-text min-h-screen font-sans">
+    <!-- Page Loader -->
+    <div id="page-loader">
+      <div class="loader-initials">SJ</div>
+      <div class="loader-bar-track">
+        <div class="loader-bar-fill"></div>
+      </div>
+      <div class="loader-title">Portfolio</div>
+    </div>
+
     <slot />
+
+    <script is:inline>
+      // Hide loader when page is ready
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          var loader = document.getElementById('page-loader');
+          if (loader) {
+            loader.classList.add('hidden');
+            // Remove from DOM after transition
+            setTimeout(function() { loader.remove(); }, 500);
+          }
+        }, 800);
+      });
+    </script>
   </body>
 </html>

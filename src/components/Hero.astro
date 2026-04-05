@@ -2,86 +2,54 @@
 
 ---
 
-<section id="hero" class="relative pt-32 pb-20 px-6 overflow-hidden">
-  <!-- Decorative background elements -->
-  <div class="absolute inset-0 dot-pattern opacity-30"></div>
-  <div class="absolute top-20 left-1/4 w-72 h-72 bg-accent/5 rounded-full blur-3xl"></div>
-  <div class="absolute bottom-10 right-1/4 w-96 h-96 bg-accent/3 rounded-full blur-3xl"></div>
-
-  <div class="relative max-w-4xl mx-auto text-center">
-    <!-- Photo with glow ring -->
-    <div class="mb-8 relative inline-block">
-      <div class="absolute inset-0 w-36 h-36 mx-auto rounded-full bg-accent/20 blur-xl"></div>
-      <img
-        src="/photo.jpg"
-        alt="Sagar Jethi"
-        class="relative w-32 h-32 rounded-full mx-auto object-cover object-top border-3 border-accent/40 shadow-lg shadow-accent/10"
-        loading="eager"
-      />
-    </div>
-
-    <!-- Name with decorative treatment -->
-    <div class="mb-2">
-      <span class="font-fira text-xs text-muted tracking-widest uppercase">Hello, I'm</span>
-    </div>
-    <h1 class="font-sora text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4">
-      Sagar <span class="text-accent">Jethi</span>
+<section id="hero" class="py-20 px-6 relative overflow-hidden">
+  <!-- Background illustration -->
+  <div class="absolute inset-0 opacity-[0.06]">
+    <img src="/images/hero-bg.jpg" alt="" class="w-full h-full object-cover" aria-hidden="true" />
+  </div>
+  <div class="max-w-3xl mx-auto relative">
+    <!-- Greeting -->
+    <p class="font-mono text-sm text-accent tracking-wide mb-4 animate-fade-in animate-fade-in-d1">Hello, welcome</p>
+    <h1 class="font-sans text-3xl md:text-4xl lg:text-5xl font-bold text-text leading-tight mb-6 animate-fade-in animate-fade-in-d2">
+      I build production blockchain systems that handle <span class="text-accent">real money</span> and <span class="text-accent">real users</span>.
     </h1>
-
-    <!-- Roles -->
-    <div class="flex flex-wrap items-center justify-center gap-2 mb-6">
-      <span class="font-fira text-xs px-3 py-1.5 rounded-full border border-accent/30 text-accent tracking-wide">Founder, Code Minto</span>
-      <span class="font-fira text-xs px-3 py-1.5 rounded-full border border-border text-muted tracking-wide">Blockchain Architect & Smart Contract Engineer</span>
-      <span class="font-fira text-xs px-3 py-1.5 rounded-full border border-border text-muted tracking-wide">Chainlink Advocate, Ahmedabad</span>
-      <span class="font-fira text-xs px-3 py-1.5 rounded-full border border-border text-muted tracking-wide">Blockchain & AI Educator</span>
-      <span class="font-fira text-xs px-3 py-1.5 rounded-full border border-border text-muted tracking-wide">Hackathon Mentor & Judge</span>
-    </div>
-
-    <p class="text-muted text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-10">
-      I build production blockchain systems that handle real money and real users.
-      Over <span class="text-text font-semibold">10 years</span>, I've helped <span class="text-text font-semibold">30+ clients</span> ship smart contracts,
-      DeFi protocols, and AI-powered platforms — and educated <span class="text-text font-semibold">2,000+ developers</span> along the way.
+    <p class="text-muted text-base md:text-lg leading-relaxed max-w-2xl mb-12 animate-fade-in animate-fade-in-d3">
+      Over 10 years of shipping smart contracts, DeFi protocols, and AI-powered platforms —
+      from architecture to mainnet.
     </p>
 
-    <!-- Key Achievements -->
-    <div class="flex flex-wrap items-center justify-center gap-6 md:gap-10 max-w-3xl mx-auto mb-12">
-      <div class="text-center">
-        <div class="font-sora text-2xl font-bold text-accent">30+</div>
-        <div class="font-fira text-[10px] text-muted mt-0.5 tracking-wide uppercase">Projects & Clients Delivered</div>
+    <!-- Stats -->
+    <div class="flex flex-wrap items-center gap-8 md:gap-12 mb-12 animate-fade-in animate-fade-in-d4">
+      <div>
+        <span class="font-sans text-2xl md:text-3xl font-bold text-accent stat-number">30+</span>
+        <span class="block font-mono text-xs text-muted mt-1 tracking-wide uppercase">Projects Delivered</span>
       </div>
-      <div class="w-px h-8 bg-border/50 hidden md:block"></div>
-      <div class="text-center">
-        <div class="font-sora text-2xl font-bold text-accent">20+</div>
-        <div class="font-fira text-[10px] text-muted mt-0.5 tracking-wide uppercase">Hackathons Won & Judged</div>
+      <div class="hidden sm:block w-px h-10 bg-border"></div>
+      <div>
+        <span class="font-sans text-2xl md:text-3xl font-bold text-accent stat-number">20+</span>
+        <span class="block font-mono text-xs text-muted mt-1 tracking-wide uppercase">Hackathons Won & Judged</span>
       </div>
-      <div class="w-px h-8 bg-border/50 hidden md:block"></div>
-      <div class="text-center">
-        <div class="font-sora text-2xl font-bold text-accent">2,000+</div>
-        <div class="font-fira text-[10px] text-muted mt-0.5 tracking-wide uppercase">Developers Educated</div>
+      <div class="hidden sm:block w-px h-10 bg-border"></div>
+      <div>
+        <span class="font-sans text-2xl md:text-3xl font-bold text-accent stat-number">2,000+</span>
+        <span class="block font-mono text-xs text-muted mt-1 tracking-wide uppercase">Developers Educated</span>
       </div>
     </div>
 
-    <!-- CTA buttons -->
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+    <!-- CTA Buttons -->
+    <div class="flex flex-col sm:flex-row gap-4 animate-fade-in animate-fade-in-d5">
       <a
         href="#projects"
-        class="inline-block font-fira text-sm bg-accent text-primary px-8 py-3.5 font-medium hover:bg-accent/90 transition-all duration-200 shadow-lg shadow-accent/20"
+        class="inline-flex items-center justify-center font-sans text-sm font-medium bg-accent text-white px-8 py-3.5 rounded-lg hover:bg-[#D4652E] transition-all duration-200 shadow-sm hover:shadow-md hover:shadow-accent/10"
       >
         View My Work
       </a>
       <a
         href="#contact"
-        class="inline-block font-fira text-sm border border-border text-muted px-8 py-3.5 hover:border-accent hover:text-accent transition-all duration-200"
+        class="inline-flex items-center justify-center font-sans text-sm font-medium border border-border text-muted px-8 py-3.5 rounded-lg hover:border-accent hover:text-accent transition-all duration-200"
       >
         Get In Touch
       </a>
-    </div>
-
-    <!-- Scroll indicator -->
-    <div class="mt-16 animate-bounce">
-      <svg class="w-5 h-5 mx-auto text-muted/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-      </svg>
     </div>
   </div>
 </section>
